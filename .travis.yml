@@ -4,9 +4,9 @@ jdk:
 
 addons:
  sonarcloud:
-  organization: Alex-1996
+  organization: alexpanichi96
   token:
-   secure: 9bbf3ef13e71dea5ebcfa04a169d2163787d9e3b
+   secure: d27148c3d945114b1515c5e61419d9d2432745ef
 script:
 -ant build
 -sonar-scanner
