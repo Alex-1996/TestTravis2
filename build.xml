@@ -15,7 +15,6 @@
         <mkdir dir="bin"/>
         <copy includeemptydirs="false" todir="bin">
             <fileset dir="src">
-                <exclude name="**/*.launch"/>
                 <exclude name="**/*.java"/>
             </fileset>
         </copy>
@@ -48,7 +47,7 @@
         <antcall target="build"/>
     </target>
     <target name="HelloWorld3">
-        <java classname="HelloWorld3" failonerror="true" fork="yes">
+        <java classname="hello.HelloWorld3" failonerror="true" fork="yes">
             <classpath refid="HelloWorld3.classpath"/>
         </java>
     </target>
