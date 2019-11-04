@@ -3,12 +3,12 @@
               Any modifications will be overwritten.
               To include a user specific buildfile here, simply create one in the same
               directory with the processing instruction <?eclipse.ant.import?>
-              as the first entry and export the buildfile again. --><project basedir="." default="build" name="HelloWorld">
+              as the first entry and export the buildfile again. --><project basedir="." default="build" name="HelloWorld3">
     <property environment="env"/>
     <property name="debuglevel" value="source,lines,vars"/>
     <property name="target" value="1.8"/>
     <property name="source" value="1.8"/>
-    <path id="HelloWorld.classpath">
+    <path id="HelloWorld3.classpath">
         <pathelement location="bin"/>
     </path>
     <target name="init">
@@ -30,7 +30,7 @@
         <echo message="${ant.project.name}: ${ant.file}"/>
         <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
             <src path="src"/>
-            <classpath refid="HelloWorld.classpath"/>
+            <classpath refid="HelloWorld3.classpath"/>
         </javac>
     </target>
     <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
@@ -47,14 +47,9 @@
         <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
         <antcall target="build"/>
     </target>
-    <target name="main">
-        <java classname="main" failonerror="true" fork="yes">
-            <classpath refid="HelloWorld.classpath"/>
-        </java>
-    </target>
-    <target name="HelloWorld">
-        <java classname="HelloWorld" failonerror="true" fork="yes">
-            <classpath refid="HelloWorld.classpath"/>
+    <target name="HelloWorld3">
+        <java classname="HelloWorld3" failonerror="true" fork="yes">
+            <classpath refid="HelloWorld3.classpath"/>
         </java>
     </target>
 </project>
